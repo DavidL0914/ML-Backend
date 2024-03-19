@@ -11,24 +11,30 @@ height_mean = 170
 height_std = 10
 height = np.random.normal(height_mean, height_std, num_samples)
 
-weekly_sugar_intake_mean = 150
-weekly_sugar_intake_std = 50
+# Adjust sugar intake mean and std
+weekly_sugar_intake_mean = 200  # Higher sugar intake is associated with higher risk of diabetes
+weekly_sugar_intake_std = 60     # Increased variability in sugar intake
 weekly_sugar_intake = np.random.normal(weekly_sugar_intake_mean, weekly_sugar_intake_std, num_samples)
 
-weekly_activity_mean = 3
-weekly_activity_std = 1
+# Adjust activity mean and std
+weekly_activity_mean = 2        # Lower activity level is associated with higher risk of diabetes
+weekly_activity_std = 0.5       # Decreased variability in activity
 weekly_activity = np.random.normal(weekly_activity_mean, weekly_activity_std, num_samples)
 
-weight_mean = 70
-weight_std = 10
+# Adjust weight mean and std
+weight_mean = 80                # Higher weight is associated with higher risk of diabetes
+weight_std = 15                 # Increased variability in weight
 weight = np.random.normal(weight_mean, weight_std, num_samples)
 
-age_mean = 40
-age_std = 10
+# Adjust age mean and std
+age_mean = 45                   # Older age is associated with higher risk of diabetes
+age_std = 15                    # Increased variability in age
 age = np.random.normal(age_mean, age_std, num_samples)
 
 # Generate labels (0 for non-diabetic, 1 for diabetic)
-labels = np.random.randint(2, size=num_samples)
+# Adjust label probabilities based on known prevalence of diabetes
+# Example: Assume 20% prevalence of diabetes
+labels = np.random.choice([0, 1], size=num_samples, p=[0.8, 0.2])
 
 # Create DataFrame
 data = pd.DataFrame({
